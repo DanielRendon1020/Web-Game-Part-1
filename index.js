@@ -5,7 +5,17 @@ function newImage(asset, source, posLeft, posBottom){
     newElem.style.position = 'fixed'
     newElem.style.left = posLeft
     newElem.style.bottom = posBottom
-    newElem.addEventListener('click', function(){
+    document.body.append(newElem)
+    return(asset)
+}
+
+function newItem(asset, source, posLeft, posBottom){
+    let newElem = document.createElement('img')
+    newElem.src = `assets/${source}`
+    newElem.style.position = 'fixed'
+    newElem.style.left = posLeft
+    newElem.style.bottom = posBottom
+    newElem.addEventListener('dblclick', function(){
         newElem.remove()
     })
     document.body.append(newElem)
@@ -18,8 +28,9 @@ newImage('tree', 'tree.png', '200px', '300px')
 newImage('pillar', 'pillar.png', '350px', '100px')
 newImage('crate', 'crate.png', '150px', '200px')
 newImage('well', 'well.png', '500px', '425px')
-newImage('sword', 'sword.png', '500px', '405px')
-newImage('shield', 'sheild.png', '165px', '185px')
-newImage('staff', 'staff.png', '600px', '100px')
+
+newItem('sword', 'sword.png', '500px', '405px')
+newItem('shield', 'sheild.png', '165px', '185px')
+newItem('staff', 'staff.png', '600px', '100px')
 
 
